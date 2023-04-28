@@ -1,0 +1,48 @@
+.Page{
+  display: flex;
+  flex-direction: row;
+}
+
+.SideBar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 117px;
+  min-height: 100%;
+  position:absolute;
+  top: 90px;
+  background-color: black;
+  
+}
+
+.SportIcons_list{
+  display: flex;
+  flex-direction: column;
+  gap:20px;
+  margin-top: 250px;
+}
+
+.SportIcons_list img {
+  width: 64px;
+  height: 64px; 
+}
+
+.copyright {
+  transform: rotate(-180deg);
+  writing-mode : vertical-lr;
+  color: white;
+  font-weight: 500;
+  font-size: 12px;
+  margin-top: 150px;
+  
+}
+
+.Info{
+  margin-top: 3rem;
+  margin-left: 14rem;
+}
+
+h1 {
+  font-size: 300%;
+  font-weight: 500;
+}
