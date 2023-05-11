@@ -12,6 +12,7 @@
   position:absolute;
   top: 90px;
   background-color: black;
+  flex: 1;
   
 }
 
@@ -33,7 +34,7 @@
   color: white;
   font-weight: 500;
   font-size: 12px;
-  margin-top: 150px;
+  margin-top: auto;
   
 }
 
@@ -45,4 +46,8 @@
 h1 {
   font-size: 300%;
   font-weight: 500;
+}
+
+.Dashboard{
+  margin-top: 5rem;
 }

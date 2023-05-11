@@ -3,7 +3,8 @@ import yoga from "../IMG/svgFolder/yoga.svg"
 import swim from "../IMG/svgFolder/swim.svg"
 import bike from "../IMG/svgFolder/bike.svg"
 import bumbbell from "../IMG/svgFolder/dumbbell.svg"
-import Example from "../Graphs/Bar_Graph"
+import Activity_Graph from "../Graphs/Activity_Graph"
+import DurationSession_Graph from "../Graphs/DurationSession_Graph"
 
 
 export function Page () {
@@ -27,9 +28,9 @@ export function Page () {
         <span className={styles["Info_Span"]}> Félicitations ! Vous avez explosé vos objectifs hier 👏</span>
         <div className={styles["Dashboard"]}>
           <div className={styles["Graph"]}>
-            <Example/>
+            <Activity_Graph/>
             <div className={styles["Graph_edge"]}>
-            
+            <DurationSession_Graph/>
             </div>
           </div>
           <div className={styles["Count"]}>

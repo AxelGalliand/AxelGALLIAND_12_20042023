@@ -1,0 +1,19 @@
+.Duration{
+  width: 33%;
+}
+
+
+.customTooltipSession{
+  background-color: white;
+  width: 39px;
+  height: 25px;
+  border-style: none;
+}
+
+.tooltipDataSession{
+  color: #000000;
+  font-weight: 500;
+  font-size: 8px;
+  text-align: center;
+  line-height: 24px;
+} 
