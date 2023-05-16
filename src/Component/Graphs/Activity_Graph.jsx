@@ -73,14 +73,32 @@ export default function Activity_Graph () {
             >
           <CartesianGrid strokeDasharray="3 3" vertical={false}/>
           <XAxis dataKey="day" tickLine={false}  stroke=" #DEDEDE" tick={{fill:"#9B9EAC", fontWeight:500, fontSize:14}} padding={{ left: -47, right: -48 }} tickMargin={16}/>
-          <YAxis tickLine={false} orientation="right" axisLine={false} tick={{fill:"#9B9EAC", fontWeight:500, fontSize:14}} tickMargin={45} minTickGap={27} domain={['dataMin - 10', 'dataMax']}/>
+          <YAxis yAxisId="kilogram" tickLine={false} orientation="right" axisLine={false} tick={{fill:"#9B9EAC", fontWeight:500, fontSize:14}} tickMargin={45} minTickGap={27} dataKey={'kilogram'} domain={['dataMin - 10', 'dataMax +1']} allowDataOverflow={true}/>
+          <YAxis yAxisId="calories" tickLine={false} orientation="right" axisLine={false} tick={{fill:"#9B9EAC", fontWeight:500, fontSize:14}} tickMargin={45} minTickGap={27} dataKey={'calories'} domain={['dataMin - 10', 'dataMax +10']} allowDataOverflow={true}/>
+          {/* <YAxis
+                           yAxisId="kilogram"
+                           domain={['dataMin-1', 'dataMax+2']}
+                           orientation="right"
+                           axisLine={false}
+                           tickLine={false}
+                           tickMargin={20}
+                           tickCount={3}
+                        />
+                        <YAxis
+                           yAxisId="calories"
+                           tickLine={false}
+                           orientation="bottom"
+                           hide
+                           padding={{ left: -47, right: -48 }}
+                           tickMargin={16}
+                        /> */}
           <Tooltip content={<CustomTooltip/>}/>
           <Legend className='activityLegend' verticalAlign='top' align='right' iconType={"circle"} iconSize={8} width={277} height={25} wrapperStyle={{ top: 35, right: 26 }}  formatter={(value) => {
                 return <span style={{ color: "#74798C", fontSize:14, fontWeight:500}}>{value}</span>;
             }}/>
 
-          <Bar dataKey="kilogram" name="Poids (kg)" fill="#282D30" radius={[4, 4,0,0]} />
-          <Bar dataKey="calories" name="Calories brûlées (kCal)" fill="#E60000" radius={[4, 4,0,0]}  />
+          <Bar dataKey="kilogram"  yAxisId="kilogram" name="Poids (kg)" fill="#282D30" radius={[4, 4,0,0]} />
+          <Bar dataKey="calories"  yAxisId="calories" name="Calories brûlées (kCal)" fill="#E60000" radius={[4, 4,0,0]} maxBarSize={14} />
           <text x="5%" y="15%" width={147} height={48}textAnchor="start" dominantBaseline="middle"  fill="#20253A" style={{ fontWeight:500}} >
           Activité quotidienne </text>
         </BarChart>

@@ -13,6 +13,7 @@
   top: 90px;
   background-color: black;
   flex: 1;
+  padding-bottom: 3.5rem;
   
 }
 
@@ -34,7 +35,7 @@
   color: white;
   font-weight: 500;
   font-size: 12px;
-  margin-top: auto;
+  margin-top: 15rem ;
   
 }
 
@@ -50,4 +51,10 @@ h1 {
 
 .Dashboard{
   margin-top: 5rem;
+}
+
+.Graph_edge{
+  display: flex;
+  flex-direction: row;
+  
 }

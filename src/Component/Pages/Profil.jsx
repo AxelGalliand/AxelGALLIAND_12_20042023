@@ -5,6 +5,7 @@ import bike from "../IMG/svgFolder/bike.svg"
 import bumbbell from "../IMG/svgFolder/dumbbell.svg"
 import Activity_Graph from "../Graphs/Activity_Graph"
 import DurationSession_Graph from "../Graphs/DurationSession_Graph"
+import Performance_Graph from "../Graphs/Performance_Graph"
 
 
 export function Page () {
@@ -31,6 +32,7 @@ export function Page () {
             <Activity_Graph/>
             <div className={styles["Graph_edge"]}>
             <DurationSession_Graph/>
+            <Performance_Graph/>
             </div>
           </div>
           <div className={styles["Count"]}>
