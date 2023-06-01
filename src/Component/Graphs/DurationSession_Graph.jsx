@@ -45,12 +45,12 @@ return null;
 }
 
 const CustomCursor = ({points}) => {
-  return <Rectangle fill="#000000" opacity={0.2} x={points[1].x} width={1000} height={300} />;
+  return <Rectangle fill="#000000" opacity={0.2} x={points[1].x} width={1000} height={500} />;
 };
 
-export default function DurationSession_Graph () {
+const DurationSession_Graph = () => {
 
-  return (
+  return ( 
    <div className={styles["Duration"]}>
     <ResponsiveContainer width="100%" aspect={1} >
       <LineChart
@@ -78,3 +78,5 @@ export default function DurationSession_Graph () {
    </div> 
   ); 
 };
+
+export default DurationSession_Graph;

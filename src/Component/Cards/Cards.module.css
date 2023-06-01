@@ -1,0 +1,49 @@
+.cards{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30%;
+  margin-left: 2rem;
+  gap: 26px;
+}
+
+.Card{
+  width: 258px;
+  height: 124px;
+  background-color: #FBFBFB;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.0212249);
+  border-radius: 5px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 2rem;
+  
+}
+
+.CardImg{
+  width: 60px;
+  height: 60px;
+  border-radius: 6px;
+  margin: 32px;
+}
+
+.CardTxt{
+  display: flex;
+  flex-direction: column;
+  width: auto;
+  height: 82px;
+}
+
+.CardUnit{
+  color: #282D30;
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 0;
+}
+
+.CardDenom{
+  color: #74798C;
+  font-size: 14px;
+  font-weight: 500;
+  margin-top: 5px;
+}

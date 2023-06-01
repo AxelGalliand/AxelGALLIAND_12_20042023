@@ -1,0 +1,68 @@
+import React from 'react';
+import { RadialBarChart, RadialBar,  ResponsiveContainer, PolarAngleAxis, Legend} from 'recharts';
+import styles from "./Performance_Graph.module.css";
+import DurationSession_Graph from './DurationSession_Graph';
+
+const user_score = [
+  {
+    id: 12,
+    userInfos: {
+        firstName: 'Karl',
+        lastName: 'Dovineau',
+        age: 31,
+    },
+    todayScore: 0.12,
+    keyData: {
+        calorieCount: 1930,
+        proteinCount: 155,
+        carbohydrateCount: 290,
+        lipidCount: 50
+    }
+}
+]
+
+/**
+ * 
+ * @returns {Array} new format map
+ */
+const getData = () => {
+
+  const scoreData = user_score[0].todayScore * 100
+   console.log(scoreData);
+   return scoreData
+ }
+
+ const style = {
+  top: '50%',
+  right: 0,
+  transform: 'translate(0, -50%)',
+  lineHeight: '24px',
+};
+
+
+const Percent_Graph = () => {
+
+  const data = 
+  [{
+    uv:2,
+    fill: '#E60000'
+  }]
+// console.log(data.uv);
+  return (
+    <div className={styles["Percent"]}>
+      <ResponsiveContainer  width="100%" aspect={1}>
+        <RadialBarChart cx="50%" cy="50%" style={{backgroundColor: "#FBFBFB", borderRadius: "5px"}} width="100%" height="100%" margin={{ top: 30, right: 30, bottom: 30, left: 30 }} innerRadius={70}  barSize={10} data={[data[0]]} startAngle={80} endAngle={450} >
+          <circle cx="50%" cy="50%" fill="white" r="82"></circle>
+          <PolarAngleAxis type='number' domain={[0, 100]} angleAxisId={1} tick={false}/>
+          <RadialBar  background dataKey="uv" angleAxisId={1} fill="#E60000" cornerRadius="10" data={[2]} />
+          <text className={styles['scoreSize']} fontWeight="700" fontSize={26} fill='#282D30' x="50%" y="45%" textAnchor='middle'>{`${getData()}%`}</text>
+          <text className={styles['graphTitle']} fontWeight="500" fill='#74798C' x="50%" y="55%" textAnchor='middle'>de votre</text>
+          <text className={styles['graphTitle']} fontWeight="500" fill='#74798C' x="50%" y="65%" textAnchor='middle'>objectif</text>
+          <text className={styles['graphTitle']} x="12%" y="15%" width={147} height={48} textAnchor="start" dominantBaseline="middle" fill="#20253A" style={{ fontWeight:500}} > Score </text>
+          <Legend iconSize={10} layout="vertical" verticalAlign="middle" wrapperStyle={style} />
+        </RadialBarChart>
+      </ResponsiveContainer>
+    </div>
+  );
+};
+export default Percent_Graph;

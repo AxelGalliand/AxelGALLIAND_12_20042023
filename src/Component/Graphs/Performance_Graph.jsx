@@ -2,7 +2,9 @@ import React from 'react';
 import { Radar, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, ResponsiveContainer} from 'recharts';
 import styles from './Performance_Graph.module.css';
 
-
+/**
+ * @type {Array}
+ */
 const performance = [
   {
       userId: 12,
@@ -42,50 +44,33 @@ const performance = [
       ]
   }]
 
-const performance1 = [
-  {
-    subject: 'Math',
-    A: 120,
-    B: 110,
-  },
-  {
-    subject: 'Chinese',
-    A: 98,
-    B: 130,
-  },
-  {
-    subject: 'English',
-    A: 86,
-    B: 130,
-  },
-  {
-    subject: 'Geography',
-    A: 99,
-    B: 100,
-  },
-  {
-    subject: 'Physics',
-    A: 85,
-    B: 90,
-  },
-  {
-    subject: 'History',
-    A: 65,
-    B: 85,
-  },
-];
+/**
+ * 
+ * @returns {Array} new format map
+ */
+const getData = () => {
 
-export default function Performance_Graph () {
+ const mapData = performance[0].data.map(item =>{
+    return {
+      value: item.value,
+      kind: performance[0].kind[item.kind.toString()]
+    }
+  })
+  return mapData
+}
+
+const Performance_Graph = () => {
   return (
     <div className={styles["Performance"]}>
         <ResponsiveContainer   width="100%" aspect={1} >
-        <RadarChart cx="50%" cy="50%" outerRadius="80%" style={{backgroundColor: "#282D30", borderRadius: "5px"}} data={performance}>
+        <RadarChart cx="50%" cy="50%" outerRadius="80%" style={{backgroundColor: "#282D30", borderRadius: "5px"}} data={getData()}>
           <PolarGrid radialLines={false}/>
-          <PolarAngleAxis dataKey="kind" tickLine={false} axisLine={false} dy={5} stroke="#FFF" tick={{fill:"#FFFFFF",fontSize:12}} />
+          <PolarAngleAxis dataKey="kind" tickLine={false} axisLine={false} dy={5} stroke="#FFF" tick={{fill:"#FFFFFF",fontSize:10}} />
           <PolarRadiusAxis tick={false} tickCount={6} axisLine={false} stroke="#FFFFFF"/>
           <Radar dataKey="value" fill="#FF0101" fillOpacity={0.6} />
         </RadarChart>
       </ResponsiveContainer>
     </div>
-);
+  );
 }
+export default Performance_Graph;

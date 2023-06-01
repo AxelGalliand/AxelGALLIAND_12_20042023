@@ -52,7 +52,7 @@ const CustomTooltip=({active, payload})=>{
 return null;
 }
 
-export default function Activity_Graph () {
+const Activity_Graph = () => {
 
     return (
      <div className={styles["Activity"]}>
@@ -75,23 +75,6 @@ export default function Activity_Graph () {
           <XAxis dataKey="day" tickLine={false}  stroke=" #DEDEDE" tick={{fill:"#9B9EAC", fontWeight:500, fontSize:14}} padding={{ left: -47, right: -48 }} tickMargin={16}/>
           <YAxis yAxisId="kilogram" tickLine={false} orientation="right" axisLine={false} tick={{fill:"#9B9EAC", fontWeight:500, fontSize:14}} tickMargin={45} minTickGap={27} dataKey={'kilogram'} domain={['dataMin - 10', 'dataMax +1']} allowDataOverflow={true}/>
           <YAxis yAxisId="calories" tickLine={false} orientation="right" axisLine={false} tick={{fill:"#9B9EAC", fontWeight:500, fontSize:14}} tickMargin={45} minTickGap={27} dataKey={'calories'} domain={['dataMin - 10', 'dataMax +10']} allowDataOverflow={true}/>
-          {/* <YAxis
-                           yAxisId="kilogram"
-                           domain={['dataMin-1', 'dataMax+2']}
-                           orientation="right"
-                           axisLine={false}
-                           tickLine={false}
-                           tickMargin={20}
-                           tickCount={3}
-                        />
-                        <YAxis
-                           yAxisId="calories"
-                           tickLine={false}
-                           orientation="bottom"
-                           hide
-                           padding={{ left: -47, right: -48 }}
-                           tickMargin={16}
-                        /> */}
           <Tooltip content={<CustomTooltip/>}/>
           <Legend className='activityLegend' verticalAlign='top' align='right' iconType={"circle"} iconSize={8} width={277} height={25} wrapperStyle={{ top: 35, right: 26 }}  formatter={(value) => {
                 return <span style={{ color: "#74798C", fontSize:14, fontWeight:500}}>{value}</span>;
@@ -106,5 +89,4 @@ export default function Activity_Graph () {
      </div> 
     ); 
 }
-
-
+export default Activity_Graph;

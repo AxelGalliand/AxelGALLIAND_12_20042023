@@ -51,10 +51,23 @@ h1 {
 
 .Dashboard{
   margin-top: 5rem;
+  display: flex;
+  justify-content: space-between;
 }
 
 .Graph_edge{
   display: flex;
   flex-direction: row;
+  margin-right: 0;
+  /* padding-bottom: 5rem; */
   
 }
+
+/* .Count{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30%;
+    gap: 39px;
+    margin-bottom: 0;
+} */

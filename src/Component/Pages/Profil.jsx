@@ -6,6 +6,8 @@ import bumbbell from "../IMG/svgFolder/dumbbell.svg"
 import Activity_Graph from "../Graphs/Activity_Graph"
 import DurationSession_Graph from "../Graphs/DurationSession_Graph"
 import Performance_Graph from "../Graphs/Performance_Graph"
+import  Percent_Graph  from "../Graphs/Percent_Graph"
+import CardsBrut from "../Cards/Cards.jsx"
 
 
 export function Page () {
@@ -31,12 +33,13 @@ export function Page () {
           <div className={styles["Graph"]}>
             <Activity_Graph/>
             <div className={styles["Graph_edge"]}>
-            <DurationSession_Graph/>
-            <Performance_Graph/>
+              <DurationSession_Graph/>
+              <Performance_Graph/>
+              <Percent_Graph/>
             </div>
           </div>
           <div className={styles["Count"]}>
-            
+            <CardsBrut/>
           </div>
         </div>
       </div>
