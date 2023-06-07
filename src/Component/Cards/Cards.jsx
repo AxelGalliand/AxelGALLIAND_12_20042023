@@ -1,39 +1,21 @@
-import React from "react";
+import React, {useContext} from "react";
 import styles from "./Cards.module.css";
 import caloriesIcon from "../IMG/svgFolder/calories.svg";
 import proteinIcon from "../IMG/svgFolder/proteines.svg";
 import glucidesIcon from "../IMG/svgFolder/glucides.svg";
 import lipidesIcon from "../IMG/svgFolder/lipides.svg";
+import { dataContext } from "../../Data/Get";
 
 
-const user_score = [
-  {
-    id: 12,
-    userInfos: {
-        firstName: 'Karl',
-        lastName: 'Dovineau',
-        age: 31,
-    },
-    todayScore: 0.12,
-    keyData: {
-        calorieCount: 1930,
-        proteinCount: 155,
-        carbohydrateCount: 290,
-        lipidCount: 50
-    }
-}
-]
-
-
-
+/**
+ * 
+ * @param {*} props data, image, unit, text
+ * @returns {JSXElement}
+ */
 const Cards = (props) => {
+
+  console.log(cardsData);
   
-console.log('data' ,props.data)
-console.log('image' ,props.image)
-console.log('unit' ,props.unit)
-console.log('text' ,props.text)
-
-
   return (
       <div className={styles["Card"]}>
           <img src={props.image} alt="" className={styles["CardImg"]}/>
@@ -49,12 +31,15 @@ console.log('text' ,props.text)
 
 const CardsBrut = () => {
 
+  const {cardsData} = useContext(dataContext)
+  console.log(cardsData);
+
   return (
   <div className={styles['cards']}>
-    <Cards image={caloriesIcon} data={user_score[0].keyData.calorieCount} unit="Kcal" text="Calories"/>
-    <Cards image={proteinIcon} data={user_score[0].keyData.proteinCount} unit="g" text="Protéines"/>
-    <Cards image={glucidesIcon} data={user_score[0].keyData.lipidCount} unit="g" text="Glucides"/>
-    <Cards image={lipidesIcon} data={user_score[0].keyData.carbohydrateCount} unit="g" text="Lipides"/>
+    <Cards image={caloriesIcon} data={cardsData.calorieCount} unit="Kcal" text="Calories"/>
+    <Cards image={proteinIcon} data={cardsData.proteinCount} unit="g" text="Protéines"/>
+    <Cards image={glucidesIcon} data={cardsData.carbohydrateCount} unit="g" text="Glucides"/>
+    <Cards image={lipidesIcon} data={cardsData.lipidCount} unit="g" text="Lipides"/>
   </div>
   )
 }

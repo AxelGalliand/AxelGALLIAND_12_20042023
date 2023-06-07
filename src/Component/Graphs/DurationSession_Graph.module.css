@@ -1,5 +1,12 @@
 .Duration{
   width: 31%;
+  margin-right: 2rem;
+}
+@media (max-width: 1550px) {
+  .Duration{
+    margin-bottom: 2rem;
+  }
+  
 }
 
 

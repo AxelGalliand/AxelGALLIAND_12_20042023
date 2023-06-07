@@ -14,8 +14,12 @@
   background-color: black;
   flex: 1;
   padding-bottom: 3.5rem;
-  
 }
+/* @media (max-width: 1290px) {
+  .SideBar{
+    padding-bottom: 93rem;
+  }
+} */
 
 .SportIcons_list{
   display: flex;
@@ -36,7 +40,16 @@
   font-weight: 500;
   font-size: 12px;
   margin-top: 15rem ;
-  
+}
+@media (max-width: 1550px) {
+  .copyright{
+    margin-top: 62rem;
+  }
+}
+@media (max-width: 1290px) {
+  .copyright{
+    margin-top: 105rem;
+  }
 }
 
 .Info{
@@ -54,13 +67,22 @@ h1 {
   display: flex;
   justify-content: space-between;
 }
+@media (max-width: 1550px) {
+  .Dashboard{
+  flex-direction: column;
+  }
+}
+
 
 .Graph_edge{
   display: flex;
   flex-direction: row;
   margin-right: 0;
-  /* padding-bottom: 5rem; */
-  
+}
+@media (max-width: 1290px) {
+  .Graph_edge{
+    flex-direction: column;
+  }
 }
 
 /* .Count{

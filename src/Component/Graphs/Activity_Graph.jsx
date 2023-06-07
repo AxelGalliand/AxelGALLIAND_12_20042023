@@ -55,6 +55,7 @@ return null;
 const Activity_Graph = () => {
 
     return (
+
      <div className={styles["Activity"]}>
       <ResponsiveContainer >
       <BarChart

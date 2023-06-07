@@ -6,6 +6,11 @@
   border-radius: 5px;
   margin-bottom: 28px;
 }
+@media (max-width: 1290px) {
+  .Activity{
+    width: 49rem;
+  }
+}
 
 .customTooltip{
   background-color: #E60000;

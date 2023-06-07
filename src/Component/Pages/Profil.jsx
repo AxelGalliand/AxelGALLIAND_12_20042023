@@ -10,7 +10,10 @@ import  Percent_Graph  from "../Graphs/Percent_Graph"
 import CardsBrut from "../Cards/Cards.jsx"
 
 
+
+
 export function Page () {
+
   return(
     <div className={styles["Page"]}>
 

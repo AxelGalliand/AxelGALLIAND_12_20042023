@@ -62,7 +62,7 @@ const getData = () => {
 const Performance_Graph = () => {
   return (
     <div className={styles["Performance"]}>
-        <ResponsiveContainer   width="100%" aspect={1} >
+        <ResponsiveContainer   width={330} aspect={1} >
         <RadarChart cx="50%" cy="50%" outerRadius="80%" style={{backgroundColor: "#282D30", borderRadius: "5px"}} data={getData()}>
           <PolarGrid radialLines={false}/>
           <PolarAngleAxis dataKey="kind" tickLine={false} axisLine={false} dy={5} stroke="#FFF" tick={{fill:"#FFFFFF",fontSize:10}} />

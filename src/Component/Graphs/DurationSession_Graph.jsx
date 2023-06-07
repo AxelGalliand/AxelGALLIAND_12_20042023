@@ -52,7 +52,7 @@ const DurationSession_Graph = () => {
 
   return ( 
    <div className={styles["Duration"]}>
-    <ResponsiveContainer width="100%" aspect={1} >
+    <ResponsiveContainer width={330} aspect={1} >
       <LineChart
         style={{backgroundColor: "#FF0000", borderRadius: "5px"}}
         width={258}

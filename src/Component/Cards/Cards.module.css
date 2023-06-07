@@ -6,6 +6,12 @@
   margin-left: 2rem;
   gap: 26px;
 }
+@media (max-width: 1550px) {
+  .cards{
+    margin-top: 3rem;
+  }
+  
+}
 
 .Card{
   width: 258px;
