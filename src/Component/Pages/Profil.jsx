@@ -1,3 +1,4 @@
+import {useParams} from "react-router-dom";
 import styles from "./Profil.module.css"
 import yoga from "../IMG/svgFolder/yoga.svg"
 import swim from "../IMG/svgFolder/swim.svg"
@@ -7,12 +8,24 @@ import Activity_Graph from "../Graphs/Activity_Graph"
 import DurationSession_Graph from "../Graphs/DurationSession_Graph"
 import Performance_Graph from "../Graphs/Performance_Graph"
 import  Percent_Graph  from "../Graphs/Percent_Graph"
-import CardsBrut from "../Cards/Cards.jsx"
+import Cards from "../Cards/Cards.jsx"
+import caloriesIcon from "../IMG/svgFolder/calories.svg";
+import proteinIcon from "../IMG/svgFolder/proteines.svg";
+import glucidesIcon from "../IMG/svgFolder/glucides.svg";
+import lipidesIcon from "../IMG/svgFolder/lipides.svg";
+import { useRequestDatas } from "../../Data/Get"
 
 
 
+export const Page = () => {
 
-export function Page () {
+  let {id}  = useParams();
+
+  const { data } = useRequestDatas(id);
+  
+  //  console.log(data.user);
+   
+  // const FirstName = data.user.userInfos.firstName
 
   return(
     <div className={styles["Page"]}>
@@ -42,7 +55,10 @@ export function Page () {
             </div>
           </div>
           <div className={styles["Count"]}>
-            <CardsBrut/>
+          <Cards image={caloriesIcon} data={5} unit="Kcal" text="Calories"/>
+          {/* <Cards image={proteinIcon} data={cardsData.proteinCount} unit="g" text="Protéines"/>
+    <Cards image={glucidesIcon} data={cardsData.carbohydrateCount} unit="g" text="Glucides"/>
+    <Cards image={lipidesIcon} data={cardsData.lipidCount} unit="g" text="Lipides"/> */}
           </div>
         </div>
       </div>
@@ -50,3 +66,4 @@ export function Page () {
     
   )
 }
+export default Page;
