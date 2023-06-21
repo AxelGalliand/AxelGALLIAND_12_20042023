@@ -3,36 +3,6 @@ import { RadialBarChart, RadialBar,  ResponsiveContainer, PolarAngleAxis} from '
 import styles from "./Performance_Graph.module.css";
 import { getData } from '../../Data/Formaters/Percent_GraphFormater';
 
-// const user_score = [
-//   {
-//     id: 12,
-//     userInfos: {
-//         firstName: 'Karl',
-//         lastName: 'Dovineau',
-//         age: 31,
-//     },
-//     todayScore: 0.12,
-//     keyData: {
-//         calorieCount: 1930,
-//         proteinCount: 155,
-//         carbohydrateCount: 290,
-//         lipidCount: 50
-//     }
-// }
-// ]
-
-// /**
-//  * 
-//  * @returns {Array} new format map
-//  */
-// const getData = () => {
-
-//   const scoreData = user_score[0].todayScore * 100
-//   //  console.log(scoreData);
-//    return scoreData
-//  }
-
-
 const Percent_Graph = () => {
 
   const data = 
