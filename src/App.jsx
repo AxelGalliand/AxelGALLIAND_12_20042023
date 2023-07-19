@@ -1,8 +1,11 @@
 import './App.css'
 import { Header } from './Component/Header'
-// import { Page } from './Component/Pages/Profil'
 import { Routeur } from './Component/Routes'
 
+/**
+ * function to create the main content
+ * @returns {function} export this function to main.jsx
+ */
 function App() {
   return (
     <div className='App'>
@@ -13,16 +16,3 @@ function App() {
 }
 
 export default App
-
-
-{/* <div className="App">
-<DataContextProvider>
-   <BrowserRouter>
-      <Routes>
-         <Route path="/" element={<Home />} />
-         <Route path="*" element={<Error />} />
-      </Routes>
-   </BrowserRouter>
-</DataContextProvider>
-</div> */}
-

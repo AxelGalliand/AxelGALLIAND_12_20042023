@@ -1,45 +1,14 @@
-import React, { PureComponent } from 'react';
+import React, { Component } from 'react';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
-import styles from './Activity_Graph.module.css'
+import styles from './Activity_Graph.module.css';
+import PropTypes from "prop-types";
 
-const data = [
-  {
-    day: '2020-07-01',
-    kilogram: 80,
-    calories: 240
-},
-{
-    day: '2020-07-02',
-    kilogram: 80,
-    calories: 220
-},
-{
-    day: '2020-07-03',
-    kilogram: 81,
-    calories: 280
-},
-{
-    day: '2020-07-04',
-    kilogram: 81,
-    calories: 290
-},
-{
-    day: '2020-07-05',
-    kilogram: 80,
-    calories: 160
-},
-{
-    day: '2020-07-06',
-    kilogram: 78,
-    calories: 162
-},
-{
-    day: '2020-07-07',
-    kilogram: 76,
-    calories: 390
-}
-];
-
+/**
+ * custom tooltip for the hover information 
+ * @param {boolean} 
+ * @param {array} payload array witch contains datas 
+ * @returns {jsx|Component} return the required component
+ */
 const CustomTooltip=({active, payload})=>{
     if (active) {
         return (
@@ -52,16 +21,24 @@ const CustomTooltip=({active, payload})=>{
 return null;
 }
 
-const Activity_Graph = () => {
+CustomTooltip.prototype = {
+    active: PropTypes.bool,
+    payload: PropTypes.array
+}
 
+/**
+ * const to creat a charts with bars to shows the kilograms and the calories 
+ * @param {Array} data array with relative datas
+ * @returns {Jsx|Component} return a jsx div that contain the chart
+ */
+const Activity_Graph = (props) => {
     return (
-
      <div className={styles["Activity"]}>
       <ResponsiveContainer >
       <BarChart
                 width={835}
                 height={320}
-                data={data}
+                data={props.data}
                 margin={{
                     top: 80,
                     right: 50,
@@ -89,5 +66,9 @@ const Activity_Graph = () => {
       </ResponsiveContainer>
      </div> 
     ); 
+}
+
+Activity_Graph.prototype= {
+    data: PropTypes.array
 }
 export default Activity_Graph;

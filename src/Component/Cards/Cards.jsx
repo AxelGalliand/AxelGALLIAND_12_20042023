@@ -1,18 +1,16 @@
-import React, {useContext} from "react";
+import React, {Component} from "react";
 import styles from "./Cards.module.css";
-
-import { useRequestDatas } from "../../Data/Get";
-
+import PropTypes from "prop-types";
 
 /**
- * 
- * @param {*} props data, image, unit, text
- * @returns {JSXElement}
+ * const to creat a card with the user details
+ * @param {string} image link for a svg 
+ * @param {number} data 
+ * @param {string} unit
+ * @param {string} text nutrient type
+ * @returns {JSX|Component} return a jsx div with 
  */
 const Cards = (props) => {
-
-
-  
   return (
       <div className={styles["Card"]}>
           <img src={props.image} alt="" className={styles["CardImg"]}/>
@@ -23,6 +21,10 @@ const Cards = (props) => {
       </div>
   );
 };
-
+Cards.prototype = {
+    image: PropTypes.string,
+    data: PropTypes.number,
+    unit: PropTypes.string,
+    text: PropTypes.string
+}
  export default Cards;
-

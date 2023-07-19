@@ -1,38 +1,14 @@
 import React from 'react';
 import { ResponsiveContainer, LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Rectangle } from "recharts"; 
 import styles from './DurationSession_Graph.module.css';
+import PropTypes from "prop-types";
 
-const sessions = [
-  {
-    day: 1,
-    sessionLength: 30
-},
-{
-    day: 2,
-    sessionLength: 23
-},
-{
-    day: 3,
-    sessionLength: 45
-},
-{
-    day: 4,
-    sessionLength: 50
-},
-{
-    day: 5,
-    sessionLength: 0
-},
-{
-    day: 6,
-    sessionLength: 0
-},
-{
-    day: 7,
-    sessionLength: 60
-}
-];
-
+/**
+ * const ti creat the hover informations 
+ * @param {boolean}
+ * @param {array} payload array witch contains datas 
+ * @returns {Jsx} return jsx element 
+ */
 const CustomTooltip=({active, payload})=>{
   if (active) {
       return (
@@ -44,11 +20,21 @@ const CustomTooltip=({active, payload})=>{
 return null;
 }
 
+CustomTooltip.prototype = {
+  active: PropTypes.bool,
+  payload: PropTypes.array
+}
+
 const CustomCursor = ({points}) => {
   return <Rectangle fill="#000000" opacity={0.2} x={points[1].x} width={1000} height={500} />;
 };
 
-const DurationSession_Graph = () => {
+/**
+ * const to creat a charts with line who represent the duration of the sport session 
+ * @param {Array} props array with relative datas
+ * @returns {Jsx|Component} return a jsx div that contain the chart
+ */
+const DurationSession_Graph = (props) => {
 
   return ( 
    <div className={styles["Duration"]}>
@@ -57,7 +43,7 @@ const DurationSession_Graph = () => {
         style={{backgroundColor: "#FF0000", borderRadius: "5px"}}
         width={258}
         height={263}
-        data={sessions}
+        data={props.data}
         margin={{
                   top: 50,
                   right: -2,
@@ -78,5 +64,7 @@ const DurationSession_Graph = () => {
    </div> 
   ); 
 };
-
+DurationSession_Graph.prototype= {
+  data: PropTypes.array
+}
 export default DurationSession_Graph;
