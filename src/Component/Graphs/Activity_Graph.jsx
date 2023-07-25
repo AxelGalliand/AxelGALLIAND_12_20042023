@@ -20,12 +20,10 @@ const CustomTooltip=({active, payload})=>{
 }
 return null;
 }
-
 CustomTooltip.prototype = {
     active: PropTypes.bool,
     payload: PropTypes.array
 }
-
 /**
  * const to creat a charts with bars to shows the kilograms and the calories 
  * @param {Array} data array with relative datas
@@ -55,9 +53,7 @@ const Activity_Graph = (props) => {
           <YAxis yAxisId="calories" tickLine={false} orientation="right" axisLine={false} tick={{fill:"#9B9EAC", fontWeight:500, fontSize:14}} tickMargin={45} minTickGap={27} dataKey={'calories'} domain={['dataMin - 10', 'dataMax +10']} allowDataOverflow={true}/>
           <Tooltip content={<CustomTooltip/>}/>
           <Legend className='activityLegend' verticalAlign='top' align='right' iconType={"circle"} iconSize={8} width={277} height={25} wrapperStyle={{ top: 35, right: 26 }}  formatter={(value) => {
-                return <span style={{ color: "#74798C", fontSize:14, fontWeight:500}}>{value}</span>;
-            }}/>
-
+                return <span style={{ color: "#74798C", fontSize:14, fontWeight:500}}>{value}</span>; }}/>
           <Bar dataKey="kilogram"  yAxisId="kilogram" name="Poids (kg)" fill="#282D30" radius={[4, 4,0,0]} />
           <Bar dataKey="calories"  yAxisId="calories" name="Calories brûlées (kCal)" fill="#E60000" radius={[4, 4,0,0]} maxBarSize={14} />
           <text x="5%" y="15%" width={147} height={48}textAnchor="start" dominantBaseline="middle"  fill="#20253A" style={{ fontWeight:500}} >

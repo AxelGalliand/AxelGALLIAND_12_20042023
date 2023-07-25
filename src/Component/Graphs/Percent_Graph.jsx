@@ -37,5 +37,3 @@ Percent_Graph.prototype = {
 }
 
 export default Percent_Graph;
-
-

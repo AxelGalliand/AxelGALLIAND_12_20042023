@@ -14,25 +14,22 @@ import proteinIcon from "../IMG/svgFolder/proteines.svg";
 import glucidesIcon from "../IMG/svgFolder/glucides.svg";
 import lipidesIcon from "../IMG/svgFolder/lipides.svg";
 import { useRequestDatas } from "../../Data/Get"
-import { getDataActivity } from "../../Data/Formaters/Activity_GraphFormater";
-import { getDataSession } from "../../Data/Formaters/DurationSession_GraphFormater";
-import { getDataPerform } from "../../Data/Formaters/Performance_GraphFormater"; 
-import { getDataPercent } from "../../Data/Formaters/Percent_GraphFormater";
-import { getDataCalorie } from "../../Data/Formaters/CardDataFormater";
-import { getDataProtein } from "../../Data/Formaters/CardDataFormater";
-import { getDataCarbohydrate } from "../../Data/Formaters/CardDataFormater";
-import { getDataLipid } from "../../Data/Formaters/CardDataFormater";
+import { getDataActivity } from "../../Data/Formaters/Formater";
+import { getDataSession } from "../../Data/Formaters/Formater";
+import { getDataPerform } from "../../Data/Formaters/Formater"; 
+import { getDataPercent } from "../../Data/Formaters/Formater";
+import { getDataCalorie } from "../../Data/Formaters/Formater";
+import { getDataProtein } from "../../Data/Formaters/Formater";
+import { getDataCarbohydrate } from "../../Data/Formaters/Formater";
+import { getDataLipid } from "../../Data/Formaters/Formater";
 
 /**
  * const to create the personal graph page 
  * 
  */
 export const Page = () => {
-
   let {id}  = useParams();
-
   const { data } = useRequestDatas(id);
-
   const cachedDataFirst = () => {
     const userData = data.user
     if (userData) {
@@ -40,16 +37,16 @@ export const Page = () => {
     }
 }
 
+
 const cachedDataActivity = getDataActivity (data)
+
 const cachedDataSession = getDataSession (data)
 const cachedDataPerform = getDataPerform (data)
 const cachedDataPercent = getDataPercent (data)
-
 const cachedDataCalorie = getDataCalorie(data)
 const cachedDataProtein = getDataProtein(data)
 const cachedDataCarbonhydrate = getDataCarbohydrate(data)
 const cachedDataLipid = getDataLipid(data)
-
 
   return(
     <div className={styles["Page"]}>

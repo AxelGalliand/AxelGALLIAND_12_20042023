@@ -4,8 +4,19 @@
  * @returns sessions array in the average endpoint
  */
 export const getDataSession = (datas) => {
-    const averageData = datas.average
-    if (averageData) {
-        return averageData.sessions;
+        function sessionDay () {
+        const weekDay = ['L', 'M', 'M', 'J', 'V', 'S', 'D']
+        return weekDay
     }
-}
+        const averageData = datas.average
+        if (averageData) {
+            const sessionsMap = averageData.sessions.map((sessions, index) => ({
+                ...sessions,
+                sessionLength: sessions.sessionLength,
+                day: sessionDay(sessions.day)[index]
+            }))
+           return sessionsMap
+        }
+    }
+    
+    
