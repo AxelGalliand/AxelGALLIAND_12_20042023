@@ -15,7 +15,7 @@ If you are working with several versions of NodeJS, we recommend you install [nv
 - The `npm install` command will allow you to install the dependencies.
 - The `npm start` command will allow you to run the micro API.
 
-## 3.FRINT-END Part
+## 3.FRONT-END Part
 
 - Fork the repository at this adress https://github.com/AxelGalliand/AxelGALLIAND_12_20042023/
 - Clone it on your computer.
