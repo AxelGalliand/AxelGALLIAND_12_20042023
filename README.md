@@ -1,4 +1,4 @@
-##Projet SportSee
+## Projet SportSee
 
 Projet de la formation de développeur front-end, il consiste en un tableau de bord d'analytics de coaching sportif. Il est réalisé en React avec Recharts et gère de la gestion d'appels HTTP avec axios. 
 
